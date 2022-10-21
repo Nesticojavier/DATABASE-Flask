@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Inicio</title>
+</head>
+<body>
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for datos in empleados%}
+            <tr>
+                <td>{{datos[0]}}</td>
+                <td>{{datos[3]}}</td>
+                <td>{{datos[1]}}</td>
+                <td>{{datos[2]}}</td>
+                <td>
+                    <a href="/edit/{{datos[0]}}">Update</a> | 
+                    <a href="/destroy/{{datos[0]}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/create">Create</a>
+</body>
+</html>
